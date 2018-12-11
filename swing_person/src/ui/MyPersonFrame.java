@@ -20,7 +20,7 @@ import entity.FileConfig;
 import model.PersonModel;
 import model.PersonDTO;
 import process.FileConfigList;
-import process.MyPersonFactory2;
+import process.MyPersonFactory;
 import service.IService;
 
 public class MyPersonFrame {
@@ -131,7 +131,7 @@ public class MyPersonFrame {
 					
 				}
 				try {
-					iservice = MyPersonFactory2.newInstance();
+					iservice = MyPersonFactory.newInstance();
 					//iservice = process.CfgManager.getInstance().loadCfg();					
 					list.setModel(new PersonModel(iservice.list()));
 				} catch (Exception e1) {

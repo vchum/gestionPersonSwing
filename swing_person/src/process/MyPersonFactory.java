@@ -4,7 +4,7 @@ import model.PersonDTO;
 import service.IService;
 
 
-public class MyPersonFactory2 {
+public class MyPersonFactory {
 	
 	
 	@SuppressWarnings("unchecked")
