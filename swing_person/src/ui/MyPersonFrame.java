@@ -224,9 +224,10 @@ public class MyPersonFrame {
 						e1.printStackTrace();
 					}
 				}
-				list.clearSelection();	
+				
 				btnUpdate.setEnabled(false);
 				btnRemove.setEnabled(false);
+				list.clearSelection();	
 			}
 		});
 
