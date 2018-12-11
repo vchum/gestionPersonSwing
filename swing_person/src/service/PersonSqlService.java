@@ -8,7 +8,7 @@ import Persistence.dao.PersonDao;
 import Persistence.exception.DaoException;
 import model.PersonDTO;
 
-public class BagnoleSqlService implements IService<PersonDTO>{
+public class PersonSqlService implements IService<PersonDTO>{
 	
 	PersonDao psd = new PersonDao();
 	PersonDtoService pds = new PersonDtoService();	

@@ -17,13 +17,13 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import entity.FileConfig;
-import model.BagnoleModel;
+import model.PersonModel;
 import model.PersonDTO;
 import process.FileConfigList;
 import process.MyPersonFactory2;
 import service.IService;
 
-public class MyBagnoleFrame {
+public class MyPersonFrame {
 
 	private JFrame frame;
 	private JScrollPane scrollPane;
@@ -38,7 +38,7 @@ public class MyBagnoleFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MyBagnoleFrame window = new MyBagnoleFrame();
+					MyPersonFrame window = new MyPersonFrame();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class MyBagnoleFrame {
 	 * Create the application.
 	 * @throws Exception 
 	 */
-	public MyBagnoleFrame() throws Exception {
+	public MyPersonFrame() throws Exception {
 		initialize();
 	}
 
@@ -133,7 +133,7 @@ public class MyBagnoleFrame {
 				try {
 					iservice = MyPersonFactory2.newInstance();
 					//iservice = process.CfgManager.getInstance().loadCfg();					
-					list.setModel(new BagnoleModel(iservice.list()));
+					list.setModel(new PersonModel(iservice.list()));
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -162,12 +162,12 @@ public class MyBagnoleFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
-				MyBagnoleAdd bad = new MyBagnoleAdd(iservice);
+				MyPersonAdd bad = new MyPersonAdd(iservice);
 				bad.setModal(true);
 				bad.setVisible(true);
 
 				try {
-					list.setModel(new BagnoleModel(iservice.list()));
+					list.setModel(new PersonModel(iservice.list()));
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
@@ -185,13 +185,13 @@ public class MyBagnoleFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				MyBagnoleUpdate bup = new MyBagnoleUpdate(iservice, be);
+				MyPersonUpdate bup = new MyPersonUpdate(iservice, be);
 
 				bup.setModal(true);
 				bup.setVisible(true);
 							
 				try {
-					list.setModel(new BagnoleModel(iservice.list()));
+					list.setModel(new PersonModel(iservice.list()));
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -216,7 +216,7 @@ public class MyBagnoleFrame {
 				if(a == JOptionPane.YES_OPTION){  
 					try {
 						iservice.delete(be.getId());
-						list.setModel(new BagnoleModel(iservice.list()));
+						list.setModel(new PersonModel(iservice.list()));
 						
 						
 					} catch (Exception e1) {

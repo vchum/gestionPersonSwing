@@ -13,10 +13,10 @@ import javax.swing.border.EmptyBorder;
 
 import Persistence.exception.DaoException;
 import model.PersonDTO;
-import service.BagnoleSqlService;
+import service.PersonSqlService;
 import service.IService;
 
-public class MyBagnoleUpdate extends JDialog {
+public class MyPersonUpdate extends JDialog {
 
 	/**
 	 * 
@@ -32,9 +32,9 @@ public class MyBagnoleUpdate extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			BagnoleSqlService bs = null;
+			PersonSqlService bs = null;
 			PersonDTO be = null;
-			MyBagnoleUpdate dialog = new MyBagnoleUpdate(bs, be);
+			MyPersonUpdate dialog = new MyPersonUpdate(bs, be);
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -45,7 +45,7 @@ public class MyBagnoleUpdate extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public MyBagnoleUpdate(IService<PersonDTO> bs, PersonDTO be) {
+	public MyPersonUpdate(IService<PersonDTO> bs, PersonDTO be) {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

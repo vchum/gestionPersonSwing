@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.AbstractListModel;
 
-public class BagnoleModel extends AbstractListModel<PersonDTO> {
+public class PersonModel extends AbstractListModel<PersonDTO> {
 	
 	/**
 	 * 
@@ -14,7 +14,7 @@ public class BagnoleModel extends AbstractListModel<PersonDTO> {
 	
 	private List<PersonDTO> list = new ArrayList<>();
 	
-	public BagnoleModel(List<PersonDTO> list) {
+	public PersonModel(List<PersonDTO> list) {
 		this.list = list;
 	}
 
