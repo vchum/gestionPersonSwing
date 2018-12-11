@@ -15,6 +15,7 @@ import Persistence.exception.DaoException;
 import model.PersonDTO;
 import service.PersonSqlService;
 import service.IService;
+import javax.swing.JLabel;
 
 public class MyPersonUpdate extends JDialog {
 
@@ -73,6 +74,21 @@ public class MyPersonUpdate extends JDialog {
 		textFieldMarque.setText(be.getNom());
 		textFieldModele.setText(be.getPrenom());
 		textFieldAge.setText(String.valueOf(be.getAge()));
+		{
+			JLabel lblNom = new JLabel("Nom");
+			lblNom.setBounds(37, 24, 46, 14);
+			contentPanel.add(lblNom);
+		}
+		{
+			JLabel lblPrenom = new JLabel("Prenom");
+			lblPrenom.setBounds(37, 69, 46, 14);
+			contentPanel.add(lblPrenom);
+		}
+		{
+			JLabel lblAge = new JLabel("Age");
+			lblAge.setBounds(37, 112, 46, 14);
+			contentPanel.add(lblAge);
+		}
 		
 		{
 			JPanel buttonPane = new JPanel();
